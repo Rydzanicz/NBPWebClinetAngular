@@ -20,7 +20,7 @@ export class NBPService {
     return this.http;
   }
 
-  getLast100CurrencyValue(requestData: any): Observable<any> {
+  getLast100CurrencyValue(requestData: any, page: number, size: number): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'X-API-KEY': this.apiKey
@@ -28,7 +28,11 @@ export class NBPService {
 
     return this.getHttp().get(`${this.apiUrl}/get-last-hundred`, {
       headers,
-      params: requestData,
+      params: {
+        ...requestData,
+        page: page.toString(),
+        size: size.toString()
+      },
       responseType: 'text' as 'json'
     });
   }

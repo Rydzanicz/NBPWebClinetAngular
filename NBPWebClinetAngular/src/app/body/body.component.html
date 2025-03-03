@@ -8,8 +8,15 @@
       Ładowanie danych...
     </div>
 
-    <div class="table-wrapper" *ngIf="!loading">
+    <div class="table-wrapper">
       <app-table-container [data]="tableData"></app-table-container>
+
+      <div *ngIf="loading && !allDataLoaded" class="loading-more">
+        Ładowanie kolejnych danych...
+      </div>
+      <div *ngIf="allDataLoaded" class="all-data-loaded">
+        Wszystkie dane zostały załadowane.
+      </div>
     </div>
   </div>
 </div>

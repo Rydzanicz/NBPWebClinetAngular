@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class TableContainerComponent {
   @Input() data: any[] = [];
 
-  sortState: { column: string, direction: 'ASC' | 'DESC' } = { column: '', direction: 'ASC' }; // Stan sortowania
+  sortState: { column: string, direction: 'ASC' | 'DESC' } = { column: '', direction: 'ASC' };
 
   sortData(column: 'exchangeRateDateForBuyAndSell' | 'buy' | 'sell'): void {
     if (!this.data || this.data.length === 0) return;

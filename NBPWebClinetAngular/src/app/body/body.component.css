@@ -48,3 +48,17 @@
     opacity: 0.5;
   }
 }
+
+.loading-more, .all-data-loaded {
+  text-align: center;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.loading-more {
+  color: #4caf50;
+}
+
+.all-data-loaded {
+  color: #f44336;
+}
