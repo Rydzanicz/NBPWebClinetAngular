@@ -18,7 +18,7 @@ export class BodyComponent {
   tableData: any[] = [];
   loading: boolean = false;
   page: number = 1;
-  size: number = 20;
+  size: number = 10;
   allDataLoaded: boolean = false;
 
   private activeFilters: any = {};

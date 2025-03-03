@@ -2,6 +2,7 @@
   <table>
     <thead>
     <tr>
+      <th>#</th>
       <th (click)="sortData('exchangeRateDateForBuyAndSell')">
         Data
         <span class="sort-arrow" [class.active]="sortState.column === 'exchangeRateDateForBuyAndSell'">
@@ -25,16 +26,17 @@
     </thead>
     <tbody>
     <ng-container *ngIf="data.length > 0">
-      <tr *ngFor="let row of data">
+      <tr *ngFor="let row of data; let i = index">
+        <td>{{ i + 1 }}</td>
         <td>{{ row.exchangeRateDateForBuyAndSell }}</td>
         <td>{{ row.currency }}</td>
-        <td>{{ row.buy | number : '1.4-4' }}</td>
-        <td>{{ row.sell | number : '1.4-4' }}</td>
+        <td>{{ row.buy | number: '1.4-4' }}</td>
+        <td>{{ row.sell | number: '1.4-4' }}</td>
       </tr>
     </ng-container>
 
     <tr *ngIf="data.length === 0">
-      <td colspan="4" class="empty-row">Brak danych do wyświetlenia</td>
+      <td colspan="5" class="empty-row">Brak danych do wyświetlenia</td>
     </tr>
     </tbody>
   </table>
