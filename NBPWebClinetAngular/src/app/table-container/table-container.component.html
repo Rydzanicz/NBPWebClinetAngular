@@ -1,24 +1,41 @@
 <div class="table-container">
-  <table *ngIf="data.length > 0">
+  <table>
     <thead>
     <tr>
-      <th>Data</th>
+      <th (click)="sortData('exchangeRateDateForBuyAndSell')">
+        Data
+        <span class="sort-arrow" [class.active]="sortState.column === 'exchangeRateDateForBuyAndSell'">
+            {{ sortState.column === 'exchangeRateDateForBuyAndSell' && sortState.direction === 'ASC' ? '▲' : '▼' }}
+          </span>
+      </th>
       <th>Waluta</th>
-      <th>Kupno</th>
-      <th>Sprzedaż</th>
+      <th (click)="sortData('buy')">
+        Kupno
+        <span class="sort-arrow" [class.active]="sortState.column === 'buy'">
+            {{ sortState.column === 'buy' && sortState.direction === 'ASC' ? '▲' : '▼' }}
+          </span>
+      </th>
+      <th (click)="sortData('sell')">
+        Sprzedaż
+        <span class="sort-arrow" [class.active]="sortState.column === 'sell'">
+            {{ sortState.column === 'sell' && sortState.direction === 'ASC' ? '▲' : '▼' }}
+          </span>
+      </th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let row of data">
-      <td>{{ row.exchangeRateDateForBuyAndSell }}</td>
-      <td>{{ row.currency }}</td>
-      <td>{{ row.buy | number : '1.4-4' }}</td>
-      <td>{{ row.sell | number : '1.4-4' }}</td>
+    <ng-container *ngIf="data.length > 0">
+      <tr *ngFor="let row of data">
+        <td>{{ row.exchangeRateDateForBuyAndSell }}</td>
+        <td>{{ row.currency }}</td>
+        <td>{{ row.buy | number : '1.4-4' }}</td>
+        <td>{{ row.sell | number : '1.4-4' }}</td>
+      </tr>
+    </ng-container>
+
+    <tr *ngIf="data.length === 0">
+      <td colspan="4" class="empty-row">Brak danych do wyświetlenia</td>
     </tr>
     </tbody>
   </table>
-
-  <div *ngIf="data.length === 0" class="no-data">
-    Brak danych do wyświetlenia.
-  </div>
 </div>
