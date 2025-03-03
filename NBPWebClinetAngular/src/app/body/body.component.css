@@ -19,3 +19,14 @@
   background-color: rgba(40, 40, 40, 0.8);
   border-radius: 10px;
 }
+
+.filters-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.table-wrapper {
+  flex-grow: 1;
+  margin-top: 20px;
+}

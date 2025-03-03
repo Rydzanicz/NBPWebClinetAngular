@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {Body} from './body/body.component';
+import {BodyComponent} from './body/body.component';
 
 
 export const routes: Routes = [
-  {path: '', component: Body},
+  {path: '', component: BodyComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

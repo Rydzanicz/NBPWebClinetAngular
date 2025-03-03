@@ -1,0 +1,35 @@
+<div class="filters-container">
+  <div class="form-group">
+    <label for="startDate">Data początkowa:</label>
+    <input
+      id="startDate"
+      type="date"
+      [(ngModel)]="startDate"
+      [max]="maxDate"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">Data końcowa:</label>
+    <input
+      id="endDate"
+      type="date"
+      [(ngModel)]="endDate"
+      [max]="maxDate"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="currency">Waluta:</label>
+    <select id="currency" [(ngModel)]="currency" class="form-control">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="CHF">CHF</option>
+    </select>
+  </div>
+
+  <button (click)="applyFilters()" class="apply-button">Zatwierdź Filtry</button>
+</div>

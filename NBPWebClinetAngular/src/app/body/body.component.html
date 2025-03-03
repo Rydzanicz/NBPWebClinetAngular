@@ -1,7 +1,13 @@
 <div class="container">
   <div class="content">
     <div class="product-container">
-asdkl;
+      <div class="filters-wrapper">
+        <app-filters (filtersChanged)="onFiltersChanged($event)"></app-filters>
+      </div>
+
+      <div class="table-wrapper">
+        <app-table-container [data]="tableData"></app-table-container>
+      </div>
     </div>
   </div>
 </div>
