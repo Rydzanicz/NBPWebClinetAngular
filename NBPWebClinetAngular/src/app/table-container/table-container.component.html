@@ -1,18 +1,24 @@
 <div class="table-container">
-  <table>
+  <table *ngIf="data.length > 0">
     <thead>
     <tr>
       <th>Data</th>
       <th>Waluta</th>
-      <th>Wartość</th>
+      <th>Kupno</th>
+      <th>Sprzedaż</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let row of data">
-      <td>{{ row.date }}</td>
+      <td>{{ row.exchangeRateDateForBuyAndSell }}</td>
       <td>{{ row.currency }}</td>
-      <td>{{ row.value }}</td>
+      <td>{{ row.buy | number : '1.4-4' }}</td>
+      <td>{{ row.sell | number : '1.4-4' }}</td>
     </tr>
     </tbody>
   </table>
+
+  <div *ngIf="data.length === 0" class="no-data">
+    Brak danych do wyświetlenia.
+  </div>
 </div>

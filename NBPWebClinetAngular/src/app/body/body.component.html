@@ -1,13 +1,15 @@
 <div class="container">
   <div class="content">
-    <div class="product-container">
-      <div class="filters-wrapper">
-        <app-filters (filtersChanged)="onFiltersChanged($event)"></app-filters>
-      </div>
+    <div class="filters-wrapper">
+      <app-filters (filtersChanged)="onFiltersChanged($event)"></app-filters>
+    </div>
 
-      <div class="table-wrapper">
-        <app-table-container [data]="tableData"></app-table-container>
-      </div>
+    <div *ngIf="loading" class="loading-indicator">
+      Ładowanie danych...
+    </div>
+
+    <div class="table-wrapper" *ngIf="!loading">
+      <app-table-container [data]="tableData"></app-table-container>
     </div>
   </div>
 </div>

@@ -30,10 +30,15 @@ export class FiltersComponent implements OnInit {
   }
 
   applyFilters(): void {
-    this.filtersChanged.emit({
-      startDate: this.startDate,
-      endDate: this.endDate,
-      currency: this.currency,
-    });
+    const filters: any = {currency: this.currency};
+
+    if (this.startDate) {
+      filters.startDate = this.startDate;
+    }
+    if (this.endDate) {
+      filters.endDate = this.endDate;
+    }
+
+    this.filtersChanged.emit(filters);
   }
 }

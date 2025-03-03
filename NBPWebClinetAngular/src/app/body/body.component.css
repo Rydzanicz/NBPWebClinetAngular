@@ -30,3 +30,21 @@
   flex-grow: 1;
   margin-top: 20px;
 }
+
+.loading-indicator {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 20px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
