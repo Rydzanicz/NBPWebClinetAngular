@@ -17,7 +17,7 @@ import {CommonModule} from '@angular/common';
 export class BodyComponent {
   tableData: any[] = [];
   loading: boolean = false;
-  page: number = 1;
+  page: number = 0;
   size: number = 10;
   allDataLoaded: boolean = false;
 
@@ -27,7 +27,7 @@ export class BodyComponent {
   }
 
   onFiltersChanged(filters: any): void {
-    this.page = 1;
+    this.page = 0;
     this.allDataLoaded = false;
     this.activeFilters = filters;
 
